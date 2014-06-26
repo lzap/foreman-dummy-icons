@@ -14,6 +14,6 @@ for L in $LABELS; do
     -draw "text 0,2 '$L'" \
     -fill none \
     -stroke white \
-    -draw "rectangle 0,0,20,20" \
+    -draw "rectangle 0,0,$(($SIZE-1)),$(($SIZE-1))" \
     "${SIZE}x${SIZE}-$COLOR/${L,,}.png"
 done
