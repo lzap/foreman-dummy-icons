@@ -7,13 +7,14 @@ mkdir -p "${SIZE}x${SIZE}-$COLOR" 2>/dev/null
 
 for L in $LABELS; do
   gm convert \
-    -size ${SIZE}x${SIZE} "xc:$COLOR" \
+    -size ${SIZE}x${SIZE} "xc:white" \
+    -fill $COLOR \
+    -stroke $COLOR \
+    -draw "circle $(($SIZE/2)),$(($SIZE/2)),$(($SIZE/2)),0" \
     -fill white \
-    -pointsize 21 \
+    -stroke none \
+    -pointsize $(($SIZE-3)) \
     -gravity center \
-    -draw "text 0,2 '$L'" \
-    -fill none \
-    -stroke white \
-    -draw "rectangle 0,0,$(($SIZE-1)),$(($SIZE-1))" \
+    -draw "text 1,1 '$L'" \
     "${SIZE}x${SIZE}-$COLOR/${L,,}.png"
 done
