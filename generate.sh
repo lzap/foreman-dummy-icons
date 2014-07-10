@@ -13,7 +13,7 @@ for L in $LABELS; do
     -draw "circle $(($SIZE/2)),$(($SIZE/2)),$(($SIZE/2)),0" \
     -fill white \
     -stroke none \
-    -pointsize $(($SIZE-3)) \
+    -pointsize $(($SIZE-4)) \
     -gravity center \
     -draw "text 1,1 '$L'" \
     "${SIZE}x${SIZE}-$COLOR/${L,,}.png"
