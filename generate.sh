@@ -7,11 +7,13 @@ mkdir -p "${SIZE}x${SIZE}" 2>/dev/null
 
 for COLOR in $COLORS; do
   for L in $LABELS; do
+      #-draw "circle $(($SIZE/2 - 1)),$(($SIZE/2 - 1)),$(($SIZE - 1)),$(($SIZE/2 - 1))" \
     gm convert \
+      -transparent white \
       -size ${SIZE}x${SIZE} "xc:white" \
       -fill $COLOR \
       -stroke $COLOR \
-      -draw "circle $(($SIZE/2)),$(($SIZE/2)),$(($SIZE/2)),0" \
+      -draw "roundRectangle 0,0,$(($SIZE - 1)),$(($SIZE - 1)),6,6" \
       -fill white \
       -stroke none \
       -pointsize $(($SIZE-4)) \
